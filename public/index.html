@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest bootstrap compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Mi propio CSS -->
+     <link rel="stylesheet" href="./phone.css">
+  </head>
+  <body>
+    <!-- SIP.js -->
+    <script type="text/javascript" src="./sip-0.7.3.min.js"></script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Latest bootstrap compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- mi propio js para phone en sip.js -->
+    <script type="text/javascript" src="./phoneJsSip.js"></script>
+    <!-- Angular.js -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript" src="./jqueryEvents.js"></script>
+    <div id="modalReceiveCalls" class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-sm">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <br>
+           </div>
+           <div class="modal-body">
+            <label>Contestar Llamada</label>
+            <label>CallerId:</label>
+            <input class="form-control" type="text" name="callerid" id="callerid" value="351 6285260">
+            <label>Line:</label>
+            <input class="form-control" type="text" value="1" name="line" id="line">
+            <label>Bla Bla:</label>
+            <input class="form-control" type="text" value="...." name="extraInfo" id="extraInfo">
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="answer" class="btn btn-success btn-sm">Responder</button>
+            <button type="button" id="doNotAnswer" class="btn btn-danger btn-sm">Rechazar</button>
+          </div>
+         </div>
+       </div>
+    </div>
+    <div ng-app="" class="botonera">
+      <div class="row filaBotonesDiscar">
+        <button type="button" id="call" class="btn btn-success">Llamar</button>
+        <button type="button" id="endCall" class="btn btn-danger">Colgar</button>
+      </div>
+      <div class="row filaCampoNroDiscar">
+        <div class="col-md-2">
+          <input ng-bind="number" type="text" class="form-control" id="numberToCall" name="numberToCall">
+        </div>
+      </div>
+      <div class="row filaBotonesDiscar">
+        <button id="1" class="btn btn-default btn-lg" ng-model="number">1</button>
+        <button id="2"class="btn btn-lg btn-default" value="2">2</button>
+        <button id="3"class="btn btn-lg btn-default">3</button>
+      </div>
+      <div class="row filaBotonesDiscar">
+        <button id="4" class="btn btn-lg btn-default">4</button>
+        <button id="5" class="btn btn-lg btn-default">5</button>
+        <button id="6" class="btn btn-lg btn-default">6</button>
+      </div>
+      <div class="row filaBotonesDiscar">
+        <button id="7" class="btn btn-lg btn-default">7</button>
+        <button id="8" class="btn btn-lg btn-default">8</button>
+        <button id="9" class="btn btn-lg btn-default">9</button>
+      </div>
+      <div class="row filaBotonesDiscar">
+        <button id="*" class="btn btn-lg btn-default botonAsterisco">*</button>
+        <button id="0" class="btn btn-lg btn-default">0</button>
+        <button id="#" class="btn btn-lg btn-default">#</button>
+      </div>
+    </div>
+    <audio id="remoteAudio" autoplay="autoplay"></audio>
+    <audio id="localAudio" muted="muted"></audio>
+  </body>
+</html>
